@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[tomcat项目去除工程名访问]]></title>
+    <url>%2F2018%2F12%2F12%2Ftomcat%E9%A1%B9%E7%9B%AE%E5%8E%BB%E9%99%A4%E5%B7%A5%E7%A8%8B%E5%90%8D%E8%AE%BF%E9%97%AE%2F</url>
+    <content type="text"><![CDATA[修改tomcat配置文件1root@4e198f488545:/usr/local/tomcat# vim conf/server.xml 增加下面一行1&lt;Context path=&quot;/&quot; docBase=&quot;/usr/local/tomcat/webapps/solo/&quot; reloadable=&quot;true&quot; crossContext=&quot;true&quot; /&gt; docBase为项目根目录 重启tomcat即可。]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2018%2F12%2F05%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
