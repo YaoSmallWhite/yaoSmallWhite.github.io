@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="平凡之路">
 <meta property="og:description" content="Stay Hungry , Stay Foolish , Stay Patient , Stay Love !">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-12T11:46:48.259Z">
+<meta property="og:updated_time" content="2018-12-12T12:10:12.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="categories">
 <meta name="twitter:description" content="Stay Hungry , Stay Foolish , Stay Patient , Stay Love !">
@@ -243,7 +243,7 @@
       
         
         <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
+          <a href="/sitemap" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
             
@@ -290,6 +290,22 @@
     </div>
   
 </nav>
+<script>
+    
+    window.onload = function(){
+        var path = 'https://malizhi.cn'; //这里要改成你博客的地址
+        var localhostItem = String(window.location).split(path)[1];
+        var LiNode = document.querySelectorAll('#menu > li > a')
+        
+        for(var i = 0; i< LiNode.length;i++){
+            var item = String(LiNode[i].href).split(path)[1];
+            if(item == localhostItem && item != undefined){
+                LiNode[i].setAttribute('style','border-bottom:1px solid black');
+            }
+        }
+    };
+
+</script>
 
 
 
@@ -346,12 +362,8 @@
 
 
           
-  <div class="comments" id="comments">
-    
       <div id="lv-container" data-id="city" data-uid="MTAyMC80MTU3Ny8xODEyNA=="></div>
-    
-  </div>
-  
+
 
         </div>
         
@@ -602,17 +614,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 

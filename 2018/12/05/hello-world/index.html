@@ -243,7 +243,7 @@
       
         
         <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
+          <a href="/sitemap" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
             
@@ -290,6 +290,22 @@
     </div>
   
 </nav>
+<script>
+    
+    window.onload = function(){
+        var path = 'https://malizhi.cn'; //这里要改成你博客的地址
+        var localhostItem = String(window.location).split(path)[1];
+        var LiNode = document.querySelectorAll('#menu > li > a')
+        
+        for(var i = 0; i< LiNode.length;i++){
+            var item = String(LiNode[i].href).split(path)[1];
+            if(item == localhostItem && item != undefined){
+                LiNode[i].setAttribute('style','border-bottom:1px solid black');
+            }
+        }
+    };
+
+</script>
 
 
 
@@ -470,7 +486,7 @@
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.png" alt="Henry Yao Alipay">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Henry Yao Alipay">
         <p>Alipay</p>
       </div>
     
