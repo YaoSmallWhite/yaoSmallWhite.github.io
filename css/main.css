@@ -240,7 +240,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Roboto Slab', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h2,
 h3,
@@ -500,8 +500,8 @@ pre,
   margin: 20px 0;
   padding: 0;
   font-size: 13px;
-  color: #4d4d4c;
-  background: #f7f7f7;
+  color: #c5c8c6;
+  background: #1d1f21;
   line-height: 1.6;
 }
 pre,
@@ -518,7 +518,7 @@ code {
 }
 pre code {
   padding: 0;
-  color: #4d4d4c;
+  color: #c5c8c6;
   background: none;
   text-shadow: none;
 }
@@ -541,7 +541,7 @@ pre code {
 }
 .highlight figcaption {
   font-size: 1em;
-  color: #4d4d4c;
+  color: #c5c8c6;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -555,23 +555,23 @@ pre code {
 }
 .highlight figcaption a {
   float: right;
-  color: #4d4d4c;
+  color: #c5c8c6;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #4d4d4c;
+  border-bottom-color: #c5c8c6;
 }
 .highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
-  color: #869194;
+  color: #888f96;
   text-align: right;
-  background-color: #eff2f3;
+  background-color: #000;
 }
 .highlight .code pre {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #f7f7f7;
+  background-color: #1d1f21;
 }
 .highlight .line {
   height: 20px;
@@ -589,16 +589,16 @@ pre code {
   border: none;
 }
 pre .deletion {
-  background: #fdd;
+  background: #008000;
 }
 pre .addition {
-  background: #dfd;
+  background: #800000;
 }
 pre .meta {
-  color: #8959a8;
+  color: #b294bb;
 }
 pre .comment {
-  color: #8e908c;
+  color: #969896;
 }
 pre .variable,
 pre .attribute,
@@ -612,7 +612,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c82829;
+  color: #c66;
 }
 pre .number,
 pre .preprocessor,
@@ -621,7 +621,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #f5871f;
+  color: #de935f;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -634,11 +634,11 @@ pre .xml .cdata,
 pre .special,
 pre .number,
 pre .formula {
-  color: #718c00;
+  color: #b5bd68;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #3e999f;
+  color: #8abeb7;
 }
 pre .function,
 pre .python .decorator,
@@ -648,11 +648,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #4271ae;
+  color: #81a2be;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #8959a8;
+  color: #b294bb;
 }
 .full-image.full-image.full-image {
   border: none;
@@ -1132,9 +1132,9 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Monda', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -2073,7 +2073,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e5dd57;
+  background: #ab4469;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2911,4 +2911,49 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+body {
+  background: url("/images/background1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+/* 让背景图基于容器大小伸缩 */
+  background-size: cover;
+  background-position: center center;
+}
+.content-wrap {
+  border-radius: 20px;
+  padding: 30px 60px 30px 60px;
+  background: rgba(255,255,255,0.8) none repeat scroll !important;
+}
+.site-nav {
+  background: rgba(255,255,255,0.8) none repeat scroll !important;
+}
+.post-count {
+  color: #fff;
+}
+#busuanzi_container_site_uv {
+  color: #fff;
+}
+.fa fa-user-md {
+  color: #fff;
+}
+.year {
+  color: #fff;
+}
+.author {
+  color: #fff;
+}
+.site-subtitle {
+  color: #fff;
+}
+#sidebar {
+  background: url("/images/sider.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#sidebar p,
+#sidebar span,
+#sidebar a {
+  color: #fff;
 }
