@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="数据结构,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="平凡之路" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="1. 什么是数据结构 数据存储于计算机的内存中。内存如右图所示，形似排成1列的箱子，1个箱子里存储1个数据。  数据存储于内存时，决定了数据顺序和位置关系的便是“数据结构”。 2. 常用数据结构2.1 链表1链表是数据结构之一，其中的数据呈线性排列。在链表中，数据的添加和删除都较为方便，就是访问比较耗费时间  这就是链表的概念图。Blue、Yellow、Red 这3个字符串作为数据被存储于链表中。">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见数据结构">
+<meta property="og:url" content="http://yoursite.com/2019/02/22/常见数据结构/index.html">
+<meta property="og:site_name" content="平凡之路">
+<meta property="og:description" content="1. 什么是数据结构 数据存储于计算机的内存中。内存如右图所示，形似排成1列的箱子，1个箱子里存储1个数据。  数据存储于内存时，决定了数据顺序和位置关系的便是“数据结构”。 2. 常用数据结构2.1 链表1链表是数据结构之一，其中的数据呈线性排列。在链表中，数据的添加和删除都较为方便，就是访问比较耗费时间  这就是链表的概念图。Blue、Yellow、Red 这3个字符串作为数据被存储于链表中。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/02/14/5c651a306c0f4.jpg">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-001.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-002.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-003.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-004.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-005.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-006.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-007.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-008.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-009.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-010.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-011.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-012.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-013.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-014.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-015.png">
+<meta property="og:image" content="http://private.codecogs.com/gif.latex?a[2]">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-016.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-017.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-018.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-019.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-020.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-021.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-022.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-023.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-024.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-025.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-026.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-027.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-028.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-029.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-030.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-031.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-032.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-033.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-034.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-035.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-036.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-037.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-038.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-039.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-040.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-041.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-042.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-043.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-044.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-045.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-046.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-047.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-048.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-049.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-050.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-051.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-052.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-053.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-054.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-055.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-056.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-057.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-058.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-059.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-060.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-061.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-062.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-063.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-064.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-065.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-066.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-067.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-068.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-069.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-070.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-071.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-072.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-073.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-108.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-074.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-075.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-076.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-077.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-078.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-079.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-080.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-081.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-082.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-083.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-084.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-085.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-086.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-087.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-088.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-089.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-090.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-091.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-092.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-093.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-094.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-095.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-096.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-097.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-098.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-099.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-100.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-101.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-102.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-103.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-104.png">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-105.png">
+<meta property="og:image" content="https://images.gitbook.cn/508b18c0-1997-11e9-a0b8-bb857010c430">
+<meta property="og:image" content="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-107.png">
+<meta property="og:updated_time" content="2019-02-22T03:42:05.644Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常见数据结构">
+<meta name="twitter:description" content="1. 什么是数据结构 数据存储于计算机的内存中。内存如右图所示，形似排成1列的箱子，1个箱子里存储1个数据。  数据存储于内存时，决定了数据顺序和位置关系的便是“数据结构”。 2. 常用数据结构2.1 链表1链表是数据结构之一，其中的数据呈线性排列。在链表中，数据的添加和删除都较为方便，就是访问比较耗费时间  这就是链表的概念图。Blue、Yellow、Red 这3个字符串作为数据被存储于链表中。">
+<meta name="twitter:image" content="https://i.loli.net/2019/02/14/5c651a306c0f4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/22/常见数据结构/">
+
+
+
+
+
+  <title>常见数据结构 | 平凡之路</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+	<a href="https://github.com/yaosmallwhite"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">平凡之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Yao的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+<script>
+    
+    window.onload = function(){
+        var path = 'http://yaoxiang.site'; //这里要改成你博客的地址
+        var localhostItem = String(window.location).split(path)[1];
+        var LiNode = document.querySelectorAll('#menu > li > a')
+        
+        for(var i = 0; i< LiNode.length;i++){
+            var item = String(LiNode[i].href).split(path)[1];
+            if(item == localhostItem && item != undefined){
+                LiNode[i].setAttribute('style','border-bottom:1px solid black');
+            }
+        }
+    };
+
+</script>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/常见数据结构/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Henry Yao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="平凡之路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常见数据结构</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T10:58:58+08:00">
+                2019-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/02/22/常见数据结构/" class="leancloud_visitors" data-flag-title="常见数据结构">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数</span>
+                
+                <span title="字数">
+                  5.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  17min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-什么是数据结构"><a href="#1-什么是数据结构" class="headerlink" title="1. 什么是数据结构"></a>1. 什么是数据结构</h2><p><img src="https://i.loli.net/2019/02/14/5c651a306c0f4.jpg" alt="5c651a306c0f4"></p>
+<pre><code>数据存储于计算机的内存中。内存如右图所示，形似排成1列的箱子，1个箱子里存储1个数据。
+</code></pre><p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-001.png" alt=""></p>
+<p><strong>数据存储于内存时，决定了数据顺序和位置关系的便是“数据结构”。</strong></p>
+<h2 id="2-常用数据结构"><a href="#2-常用数据结构" class="headerlink" title="2. 常用数据结构"></a>2. 常用数据结构</h2><h3 id="2-1-链表"><a href="#2-1-链表" class="headerlink" title="2.1 链表"></a>2.1 链表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">链表是数据结构之一，其中的数据呈线性排列。在链表中，数据的添加和删除都较为方便，就是访问比较耗费时间</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-002.png" alt=""></p>
+<p><strong>这就是链表的概念图。Blue、Yellow、Red 这3个字符串作为数据被存储于链表中。每个数据都有1个“指针”，它指向下一个数据的内存地址。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-003.png" alt=""></p>
+<p><strong>在链表中，数据一般都是分散存储于内存中的，无须存储在连续空间内。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-004.png" alt=""></p>
+<p><strong>因为数据都是分散存储的，所以如果想要访问数据，只能从第1个数据开始，顺着指针的指向一一往下访问（这便是顺序访问）。比如，想要找到 Red 这一数据，就得从 Blue 开始访问。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-005.png" alt=""></p>
+<p><strong>这之后，还要经过 Yellow，我们才能找到 Red。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-006.png" alt=""></p>
+<p><strong>如果想要添加数据，只需要改变添加位置前后的指针指向就可以，非常简单。比如，在 Blue 和 Yellow 之间添加 Green。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-007.png" alt=""></p>
+<p><strong>将 Blue 的指针指向的位置变成 Green，然后再把 Green 的指针指向 Yellow，数据的添加就大功告成了。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-008.png" alt=""></p>
+<p><strong>数据的删除也一样，只要改变指针的指向就可以，比如删除 Yellow。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-009.png" alt=""></p>
+<p><strong>这时，只需要把 Green 指针指向的位置从 Yellow 变成 Red，删除就完成了。虽然 Yellow 本身还存储在内存中，但是不管从哪里都无法访问这个数据，所以也就没有特意去删除它的必要了。今后需要用到 Yellow 所在的存储空间时，只要用新数据覆盖掉就可以了。</strong></p>
+<blockquote>
+<p><strong>补充说明</strong></p>
+<p>上文中讲述的链表是最基本的一种链表。除此之外，还存在几种扩展方便的链表。</p>
+<p>虽然上文中提到的链表在尾部没有指针，但我们也可以在链表尾部使用指针，并且让它指向链表头部的数据，将链表变成环形。这便是“循环链表”，也叫“环形链表”。循环链表没有头和尾的概念。想要保存数量固定的最新数据时通常会使用这种链表。</p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-010.png" alt=""></p>
+<p>另外，上文链表里的每个数据都只有一个指针，但我们可以把指针设定为两个，并且让它们分别指向前后数据，这就是“双向链表”。使用这种链表，不仅可以从前往后，还可以从后往前遍历数据，十分方便。</p>
+<p>但是，双向链表存在两个缺点：一是指针数的增加会导致存储空间需求增加；二是添加和删除数据时需要改变更多指针的指向。</p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-011.png" alt=""></p>
+</blockquote>
+<h3 id="2-2-数组"><a href="#2-2-数组" class="headerlink" title="2.2 数组"></a>2.2 数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数组也是数据呈线性排列的一种数据结构。与前一节中的链表不同，在数组中，访问数据十分简单，而添加和删除数据比较耗工夫。</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-012.png" alt=""></p>
+<p><strong>这就是数组的概念图。Blue、Yellow、Red 作为数据存储在数组中。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-013.png" alt=""></p>
+<p><strong>数据按顺序存储在内存的连续空间内。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-014.png" alt=""></p>
+<p><strong>由于数据是存储在连续空间内的，所以每个数据的内存地址（在内存上的位置）都可以通过数组下标算出，我们也就可以借此直接访问目标数据（这叫作“随机访问”）。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-015.png" alt=""></p>
+<p><strong>比如现在我们想要访问 Red。如果使用指针就只能从头开始查找，但在数组中，只需要指定<img src="http://private.codecogs.com/gif.latex?a[2]" alt="a[2]">，便能直接访问 Red。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-016.png" alt=""></p>
+<p><strong>但是，如果想在任意位置上添加或者删除数据，数组的操作就要比链表复杂多了。这里我们尝试将 Green 添加到第2个位置上。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-017.png" alt=""></p>
+<p><strong>首先，在数组的末尾确保需要增加的存储空间。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-018.png" alt=""></p>
+<p><strong>为了给新数据腾出位置，要把已有数据一个个移开。首先把 Red 往后移。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-019.png" alt=""></p>
+<p><strong>然后把 Yellow 往后移。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-020.png" alt=""></p>
+<p><strong>最后在空出来的位置上写入 Green。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-021.png" alt=""></p>
+<p><strong>添加数据的操作就完成了。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-022.png" alt=""></p>
+<p><strong>反过来，如果想要删除 Green……</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-023.png" alt=""></p>
+<p><strong>首先，删掉目标数据（在这里指 Green）。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-024.png" alt=""></p>
+<p><strong>然后把后面的数据一个个往空位移。先把 Yellow 往前移。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-025.png" alt=""></p>
+<p><strong>接下来移动 Red。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-026.png" alt=""></p>
+<p><strong>最后再删掉多余的空间。这样一来 Green 便被删掉了。</strong></p>
+<blockquote>
+<p><strong>补充说明</strong></p>
+<p>在链表和数组中，数据都是线性地排成一列。在链表中访问数据较为复杂，添加和删除数据较为简单；而在数组中访问数据比较简单，添加和删除数据却比较复杂。</p>
+<p>我们可以根据哪种操作较为频繁来决定使用哪种数据结构。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>访问</th>
+<th>添加</th>
+<th>删除</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>链表</td>
+<td>慢</td>
+<td>快</td>
+<td>快</td>
+</tr>
+<tr>
+<td>数组</td>
+<td>快</td>
+<td>慢</td>
+<td>慢</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="2-3-栈"><a href="#2-3-栈" class="headerlink" title="2.3 栈"></a>2.3 栈</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">栈也是一种数据呈线性排列的数据结构，不过在这种结构中，我们只能访问最新添加的数据。栈就像是一摞书，拿到新书时我们会把它放在书堆的最上面，取书时也只能从最上面的新书开始取。</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-027.png" alt=""></p>
+<p><strong>这就是栈的概念图。现在存储在栈中的只有数据 Blue。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-028.png" alt=""></p>
+<p><strong>然后，栈中添加了数据 Green。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-029.png" alt=""></p>
+<p><strong>接下来，数据 Red 入栈。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-030.png" alt=""></p>
+<p><strong>从栈中取出数据时，是从最上面，也就是最新的数据开始取出的。这里取出的是 Red。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-031.png" alt=""></p>
+<p><strong>如果再进行一次出栈操作，取出的就是 Green 了。</strong></p>
+<blockquote>
+<p><strong>解说</strong></p>
+<p>像栈这种最后添加的数据最先被取出，即“后进先出”的结构，我们称为 Last In First Out，简称 LIFO。</p>
+<p>与链表和数组一样，栈的数据也是线性排列，但在栈中，添加和删除数据的操作只能在一端进行，访问数据也只能访问到顶端的数据。想要访问中间的数据时，就必须通过出栈操作将目标数据移到栈顶才行。</p>
+<p><strong>应用示例</strong></p>
+<p>栈只能在一端操作这一点看起来似乎十分不便，但在只需要访问最新数据时，使用它就比较方便了。</p>
+<p>比如，规定（AB（C（DE）F）（G（（H）I J）K））这一串字符中括号的处理方式如下：首先从左边开始读取字符，读到左括号就将其入栈，读到右括号就将栈顶的左括号出栈。此时，出栈的左括号便与当前读取的右括号相匹配。通过这种处理方式，我们就能得知配对括号的具体位置。</p>
+</blockquote>
+<h3 id="2-4-队列"><a href="#2-4-队列" class="headerlink" title="2.4 队列"></a>2.4 队列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">与前面提到的数据结构相同，队列中的数据也呈线性排列。虽然与栈有些相似，但队列中添加和删除数据的操作分别是在两端进行的。就和“队列”这个名字一样，把它想象成排成一队的人更容易理解。在队列中，处理总是从第一名开始往后进行，而新来的人只能排在队尾。</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-032.png" alt=""></p>
+<p><strong>这就是队列的概念图。现在队列中只有数据 Blue。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-033.png" alt=""></p>
+<p><strong>然后，队列中添加了数据 Green。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-034.png" alt=""></p>
+<p><strong>紧接着，数据 Red 也入队了。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-035.png" alt=""></p>
+<p><strong>从队列中取出（删除）数据时，是从最下面，也就是最早入队的数据开始的。这里取出的是 Blue。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-036.png" alt=""></p>
+<p><strong>如果再进行一次出队操作，取出的就是 Green 了。</strong></p>
+<blockquote>
+<p><strong>解说</strong></p>
+<p>像队列这种最先进去的数据最先被取来，即“先进先出”的结构，我们称为 First In First Out，简称 FIFO。</p>
+<p>与栈类似，队列中可以操作数据的位置也有一定的限制。在栈中，数据的添加和删除都在同一端进行，而在队列中则分别是在两端进行的。队列也不能直接访问位于中间的数据，必须通过出队操作将目标数据变成首位后才能访问。</p>
+</blockquote>
+<h3 id="2-5-哈希表"><a href="#2-5-哈希表" class="headerlink" title="2.5 哈希表"></a>2.5 哈希表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在哈希表这种数据结构中，使用将在5-3节讲解的“哈希函数”，可以使数据的查询效率得到显著提升。</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-037.png" alt=""></p>
+<p><strong>哈希表存储的是由键（key）和值（value）组成的数据。例如，我们将每个人的性别作为数据进行存储，键为人名，值为对应的性别。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-038.png" alt=""></p>
+<p><strong>为了和哈希表进行对比，我们先将这些数据存储在数组中。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-039.png" alt=""></p>
+<p><strong>此处准备了6个箱子（即长度为6的数组）来存储数据。假设我们需要查询 Ally 的性别，由于不知道 Ally 的数据存储在哪个箱子里，所以只能从头开始查询。这个操作便叫作“线性查找”。</strong></p>
+<blockquote>
+<p><strong>提示</strong>　一般来说，我们可以把键当成数据的标识符，把值当成数据的内容。</p>
+</blockquote>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-040.png" alt=""></p>
+<p><strong>0号箱子中存储的键是 Joe 而不是 Ally。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-041.png" alt=""></p>
+<p><strong>1号箱子中的也不是 Ally。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-042.png" alt=""></p>
+<p><strong>同样，2号、3号箱子中的也都不是 Ally。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-043.png" alt=""></p>
+<p><strong>查找到4号箱子的时候，发现其中数据的键为 Ally。把键对应的值取出，我们就知道 Ally 的性别为女（F）了。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-044.png" alt=""></p>
+<p><strong>数据量越多，线性查找耗费的时间就越长。由此可知：由于数据的查询较为耗时，所以此处并不适合使用数组来存储数据。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-045.png" alt=""></p>
+<p><strong>但使用哈希表便可以解决这个问题。首先准备好数组，这次我们用5个箱子的数组来存储数据。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-046.png" alt=""></p>
+<p><strong>尝试把 Joe 存进去。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-047.png" alt=""></p>
+<p><strong>使用哈希函数（Hash）计算 Joe 的键，也就是字符串“Joe”的哈希值。得到的结果为4928。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-048.png" alt=""></p>
+<p><strong>将得到的哈希值除以数组的长度5，求得其余数。这样的求余运算叫作“mod 运算”。此处 mod 运算的结果为3。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-049.png" alt=""></p>
+<p><strong>因此，我们将 Joe 的数据存进数组的3号箱子中。重复前面的操作，将其他数据也存进数组中。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-050.png" alt=""></p>
+<p><strong>Sue 键的哈希值为7291，mod 5的结果为1，将 Sue 的数据存进1号箱中。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-051.png" alt=""></p>
+<p><strong>Dan 键的哈希值为1539，mod 5的结果为4，将 Dan 的数据存进4号箱中。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-052.png" alt=""></p>
+<p><strong>Nell 键的哈希值为6276，mod 5的结果为1。本应将其存进数组的1号箱中，但此时1号箱中已经存储了 Sue 的数据。这种存储位置重复了的情况便叫作“冲突”。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-053.png" alt=""></p>
+<p><strong>遇到这种情况，可使用链表在已有数据的后面继续存储新的数据。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-054.png" alt=""></p>
+<p><strong>Ally 键的哈希值为9143，mod 5的结果为3。本应将其存储在数组的3号箱中，但3号箱中已经有了 Joe 的数据，所以使用链表，在其后面存储 Ally 的数据。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-055.png" alt=""></p>
+<p><strong>Bob 键的哈希值为5278，mod 5的结果为3。本应将其存储在数组的3号箱中，但3号箱中已经有了 Joe 和 Ally 的数据，所以使用链表，在 Ally 的后面继续存储 Bob 的数据。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-056.png" alt=""></p>
+<p><strong>像这样存储完所有数据，哈希表也就制作完成了。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-057.png" alt=""></p>
+<p><strong>接下来讲解数据的查询方法。假设我们要查询 Dan 的性别。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-058.png" alt="{55%}"></p>
+<p><strong>为了知道 Dan 存储在哪个箱子里，首先需要算出 Dan 键的哈希值，然后对其进行 mod 运算。最后得到的结果为4，于是我们知道了它存储在4号箱中。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-059.png" alt=""></p>
+<p><strong>查看4号箱可知，其中的数据的键与 Dan 一致，于是取出对应的值。由此我们便知道了 Dan 的性别为男（M）。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-060.png" alt=""></p>
+<p><strong>那么，想要查询 Ally 的性别时该怎么做呢？为了找到它的存储位置，先要算出 Ally 键的哈希值，再对其进行 mod 运算。最终得到的结果为3。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-061.png" alt=""></p>
+<p><strong>然而3号箱中数据的键是 Joe 而不是 Ally。此时便需要对 Joe 所在的链表进行线性查找。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-062.png" alt=""></p>
+<p><strong>于是我们找到了键为 Ally 的数据。取出其对应的值，便知道了 Ally 的性别为女（F）。</strong></p>
+<blockquote>
+<p><strong>解说</strong></p>
+<p>在哈希表中，我们可以利用哈希函数快速访问到数组中的目标数据。如果发生哈希冲突，就使用链表进行存储。这样一来，不管数据量为多少，我们都能够灵活应对。</p>
+<p>如果数组的空间太小，使用哈希表的时候就容易发生冲突，线性查找的使用频率也会更高；反过来，如果数组的空间太大，就会出现很多空箱子，造成内存的浪费。因此，给数组设定合适的空间非常重要。</p>
+<p><strong>补充说明</strong></p>
+<p>在存储数据的过程中，如果发生冲突，可以利用链表在已有数据的后面插入新数据来解决冲突。这种方法被称为“链地址法”。</p>
+<p>除了链地址法以外，还有几种解决冲突的方法。其中，应用较为广泛的是“开放地址法”。这种方法是指当冲突发生时，立刻计算出一个候补地址（数组上的位置）并将数据存进去。如果仍然有冲突，便继续计算下一个候补地址，直到有空地址为止。可以通过多次使用哈希函数或“线性探测法”等方法计算候补地址。</p>
+</blockquote>
+<h3 id="2-6-堆"><a href="#2-6-堆" class="headerlink" title="2.6 堆"></a>2.6 堆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">堆是一种图的树形结构，被用于实现“优先队列”（priority queues）优先队列是一种数据结构，可以自由添加数据，但取出数据时要从最小值开始按顺序取出。在堆的树形结构中，各个顶点被称为“结点”（node），数据就存储在这些结点中。</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-063.png" alt=""></p>
+<p><strong>这就是堆的示例。结点内的数字就是存储的数据。堆中的每个结点最多有两个子结点。树的形状取决于数据的个数。另外，结点的排列顺序为从上到下，同一行里则为从左到右。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-064.png" alt=""></p>
+<p><strong>在堆中存储数据时必须遵守这样一条规则：子结点必定大于父结点。因此，最小值被存储在顶端的根结点中。往堆中添加数据时，为了遵守这条规则，一般会把新数据放在最下面一行靠左的位置。当最下面一行里没有多余空间时，就再往下另起一行，把数据加在这一行的最左端。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-065.png" alt=""></p>
+<p><strong>我们试试往堆里添加数字5。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-066.png" alt=""></p>
+<p><strong>首先按照02的说明寻找新数据的位置。该图中最下面一排空着一个位置，所以将数据加在此处。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-067.png" alt=""></p>
+<p><strong>如果父结点大于子结点，则不符合上文提到的规则，因此需要交换父子结点的位置。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-068.png" alt=""></p>
+<p><strong>这里由于父结点的6大于子结点的5，所以交换了这两个数字。重复这样的操作直到数据都符合规则，不再需要交换为止。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-069.png" alt=""></p>
+<p><strong>现在，父结点的1小于子结点的5，父结点的数字更小，所以不再交换。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-070.png" alt=""></p>
+<p><strong>这样，往堆中添加数据的操作就完成了。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-071.png" alt=""></p>
+<p><strong>从堆中取出数据时，取出的是最上面的数据。这样，堆中就能始终保持最上面的数据最小。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-072.png" alt=""></p>
+<p><strong>由于最上面的数据被取出，因此堆的结构也需要重新调整。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-073.png" alt=""></p>
+<p><strong>按照<img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-108.png" alt="">中说明的排列顺序，将最后的数据（此处为6）移动到最顶端。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-074.png" alt=""></p>
+<p><strong>如果子结点的数字小于父结点的，就将父结点与其左右两个子结点中较小的一个进行交换。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-075.png" alt=""></p>
+<p><strong>这里由于父结点的6大于子结点（右）的5大于子结点（左）的3，所以将左边的子结点与父结点进行交换。重复这个操作直到数据都符合规则，不再需要交换为止。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-076.png" alt=""></p>
+<p><strong>现在，子结点（右）的8大于父结点的6大于子结点（左）的4，需要将左边的子结点与父结点进行交换。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-077.png" alt=""></p>
+<p><strong>这样，从堆中取出数据的操作便完成了。</strong></p>
+<h3 id="2-7-二叉查找树"><a href="#2-7-二叉查找树" class="headerlink" title="2.7 二叉查找树"></a>2.7 二叉查找树</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">二叉查找树（又叫作二叉搜索树或二叉排序树）是一种数据结构，采用了图的树形结构）。数据存储于二叉查找树的各个结点中。</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-078.png" alt=""></p>
+<p><strong>这就是二叉查找树的示例。结点中的数字便是存储的数据。此处以不存在相同数字为前提进行说明。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-079.png" alt=""></p>
+<p><strong>二叉查找树有两个性质。第一个是每个结点的值均大于其左子树上任意一个结点的值。比如结点9大于其左子树上的3和8。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-080.png" alt=""></p>
+<p><strong>同样，结点15也大于其左子树上任意一个结点的值。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-081.png" alt=""></p>
+<p><strong>第二个是每个结点的值均小于其右子树上任意一个结点的值。比如结点15小于其右子树上的23、17和28。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-082.png" alt=""></p>
+<p><strong>根据这两个性质可以得到以下结论。首先，二叉查找树的最小结点要从顶端开始，往其左下的末端寻找。此处最小值为3。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-083.png" alt=""></p>
+<p><strong>反过来，二叉查找树的最大结点要从顶端开始，往其右下的末端寻找。此处最大值为28。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-084.png" alt=""></p>
+<p><strong>下面我们来试着往二叉查找树中添加数据。比如添加数字1。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-085.png" alt=""></p>
+<p><strong>首先，从二叉查找树的顶端结点开始寻找添加数字的位置。将想要添加的1与该结点中的值进行比较，小于它则往左移，大于它则往右移。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-086.png" alt=""></p>
+<p><strong>由于1&lt;9，所以将1往左移。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-087.png" alt=""></p>
+<p><strong>由于1&lt;3，所以继续将1往左移，但前面已经没有结点了，所以把1作为新结点添加到左下方。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-088.png" alt=""></p>
+<p><strong>这样，1的添加操作便完成了。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-089.png" alt=""></p>
+<p><strong>接下来，我们再试试添加数字4。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-090.png" alt=""></p>
+<p><strong>和前面的步骤一样，首先从二叉查找树的顶端结点开始寻找添加数字的位置。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-091.png" alt=""></p>
+<p><strong>由于4&lt;9，所以将其往左移。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-092.png" alt=""></p>
+<p><strong>由于4&gt;3，所以将其往右移。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-093.png" alt=""></p>
+<p><strong>由于4&lt;8，所以需要将其往左移，但前面已经没有结点了，所以把4作为新结点添加到左下方。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-094.png" alt=""></p>
+<p><strong>于是4的添加操作也完成了。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-095.png" alt=""></p>
+<p><strong>接下来看看如何在二叉查找树中删除结点。比如我们来试试删除结点28。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-096.png" alt=""></p>
+<p><strong>如果需要删除的结点没有子结点，直接删掉该结点即可。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-097.png" alt=""></p>
+<p><strong>再试试删除结点8。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-098.png" alt=""></p>
+<p><strong>如果需要删除的结点只有一个子结点，那么先删掉目标结点……</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-099.png" alt=""></p>
+<p><strong>然后把子结点移到被删除结点的位置上即可。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-100.png" alt=""></p>
+<p><strong>最后来试试删除结点9。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-101.png" alt=""></p>
+<p><strong>如果需要删除的结点有两个子结点，那么先删掉目标结点……</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-102.png" alt=""></p>
+<p><strong>然后在被删除结点的左子树中寻找最大结点……</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-103.png" alt=""></p>
+<p><strong>最后将最大结点移到被删除结点的位置上。这样一来，就能在满足二叉查找树性质的前提下删除结点了。如果需要移动的结点（此处为4）还有子结点，就递归执行前面的操作。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-104.png" alt=""></p>
+<p><strong>下面来看看如何在二叉查找树中查找结点。比如我们来试试查找12。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-105.png" alt=""></p>
+<p><strong>从二叉查找树的顶端结点开始往下查找。和添加数据时一样，把12和结点中的值进行比较，小于该结点的值则往左移，大于则往右移。</strong></p>
+<blockquote>
+<p><strong>提示</strong>　删除9的时候，我们将“左子树中的最大结点”移动到了删除结点的位置上，但是根据二叉查找树的性质可知，移动“右子树中的最小结点”也没有问题。</p>
+</blockquote>
+<p><img src="https://images.gitbook.cn/508b18c0-1997-11e9-a0b8-bb857010c430" alt="enter image description here"></p>
+<p><strong>由于12&gt;4，所以往右移。</strong></p>
+<p><img src="http://www.ituring.com.cn/figures/2018/AlgorithmZukan/01-107.png" alt="s"></p>
+<p><strong>找到结点12了。</strong></p>
+<blockquote>
+<p><strong>补充说明</strong></p>
+<p>有很多以二叉查找树为基础扩展的数据结构，比如“平衡二叉查找树”。这种数据结构可以修正形状不均衡的树，让其始终保持均衡形态，以提高查找效率。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+	
+    
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Henry Yao WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Henry Yao Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/22/通过nginx对tcp-udp进行负载均衡/" rel="next" title="通过nginx对tcp/udp进行负载均衡">
+                <i class="fa fa-chevron-left"></i> 通过nginx对tcp/udp进行负载均衡
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/22/物联网基础知识/" rel="prev" title="物联网基础知识">
+                物联网基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTU3Ny8xODEyNA=="></div>
+    
+  </div>
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Henry Yao">
+          <p class="site-author-name" itemprop="name">Henry Yao</p>
+           
+              <p class="site-description motion-element" itemprop="description">Stay Hungry , Stay Foolish <br> Stay Patient , Stay Love !</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+		
+		
+		
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yaoSmallWhite" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=BXxkan1sZGtiNDU3MDU3RXR0K2ZqaA" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/5be0fefb5188252eff69d338" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-spinner"></i>
+                  
+                    
+                      掘金
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.cnblogs.com/henryyao/" target="_blank" title="博客园">
+                  
+                    <i class="fa fa-fw fa-crosshairs"></i>
+                  
+                    
+                      博客园
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/yaoxiang931208" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+		<div>
+			
+			  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="110" src="//music.163.com/outchain/player?type=0&id=79653796&auto=1&height=90"></iframe>
+			
+		</div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是数据结构"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-常用数据结构"><span class="nav-number">2.</span> <span class="nav-text">2. 常用数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-链表"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-数组"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-栈"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-队列"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-哈希表"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-堆"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-二叉查找树"><span class="nav-number">2.7.</span> <span class="nav-text">2.7 二叉查找树</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span class="year" itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Henry Yao</span>
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共12.2k字</span>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("9yeIfa4E5pRRwnBhALGXgJwe-gzGzoHsz", "OB7MSx5EmRvjKQdlUFuzRtIx");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

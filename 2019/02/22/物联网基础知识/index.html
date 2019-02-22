@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="nginx,">
+  <meta name="keywords" content="物联网,">
 
 
 
@@ -115,24 +115,45 @@
 
 
 
-<meta name="description" content="1. 安装nginx1.1 通过yum安装1[root@yaoxiang ~]# yum install nginx 1.2 查看nginx的版本12[root@yaoxiang ~]# nginx -vnginx version: nginx/1.12.2 nginx的版本必须高于1.9.0，因为从1.9开始nginx就支持对TCP的转发，而到了1.9.13时，UDP转发也支持了。 1.3 查看">
-<meta name="keywords" content="nginx">
+<meta name="description" content="整体结构 物联网大体上有 3 个构成要素，如图 2.1 所示。一个是设备，另一个是网关，再来就是服务器。  图 2.1　物联网的整体结构 2.1.2　网关 如图 2.1 左下所示，物联网使用的设备中，有 3 台设备不能直接连接到互联网。网关就负责把这些设备转发到互联网。 网关指的是能连接多台设备，并具备直接连接到互联网的功能的机器和软件（图 2.2）。如今，市面上有很多种网关。在多数情况下，网关">
+<meta name="keywords" content="物联网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过nginx对tcp&#x2F;udp进行负载均衡">
-<meta property="og:url" content="http://yoursite.com/2019/02/22/通过nginx对tcp-udp进行负载均衡/index.html">
+<meta property="og:title" content="物联网基础知识">
+<meta property="og:url" content="http://yoursite.com/2019/02/22/物联网基础知识/index.html">
 <meta property="og:site_name" content="平凡之路">
-<meta property="og:description" content="1. 安装nginx1.1 通过yum安装1[root@yaoxiang ~]# yum install nginx 1.2 查看nginx的版本12[root@yaoxiang ~]# nginx -vnginx version: nginx/1.12.2 nginx的版本必须高于1.9.0，因为从1.9开始nginx就支持对TCP的转发，而到了1.9.13时，UDP转发也支持了。 1.3 查看">
+<meta property="og:description" content="整体结构 物联网大体上有 3 个构成要素，如图 2.1 所示。一个是设备，另一个是网关，再来就是服务器。  图 2.1　物联网的整体结构 2.1.2　网关 如图 2.1 左下所示，物联网使用的设备中，有 3 台设备不能直接连接到互联网。网关就负责把这些设备转发到互联网。 网关指的是能连接多台设备，并具备直接连接到互联网的功能的机器和软件（图 2.2）。如今，市面上有很多种网关。在多数情况下，网关">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/02/20/5c6cc58eca105.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/20/5c6cc5f85088e.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/20/5c6cc63f11161.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/20/5c6cc6d772438.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/20/5c6cc7812a6dc.png">
-<meta property="og:updated_time" content="2019-02-22T03:08:18.585Z">
+<meta property="og:image" content="https://img.hacpai.com/bing/20180612.jpg?imageView2/1/w/960/h/520/interlace/1/q/100">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.001.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.002.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.004.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.003.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.006.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.007.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.008.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.011.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.012.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.013.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.014.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.015.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.016.png">
+<meta property="og:image" content="http://47.101.195.32/upload/7a8b3ba9119d40d28927b2ea13742611_image.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.017.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.020.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.021.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.022.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.023.png">
+<meta property="og:image" content="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.024.png">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/180416/0Q2024094_0.png">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/180416/0Q30115D_0.png">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/180416/0Q401C19_0.png">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/180416/0Q501W37_0.png">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/180416/0Q6021318_0.png">
+<meta property="og:updated_time" content="2019-02-22T03:02:32.059Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过nginx对tcp&#x2F;udp进行负载均衡">
-<meta name="twitter:description" content="1. 安装nginx1.1 通过yum安装1[root@yaoxiang ~]# yum install nginx 1.2 查看nginx的版本12[root@yaoxiang ~]# nginx -vnginx version: nginx/1.12.2 nginx的版本必须高于1.9.0，因为从1.9开始nginx就支持对TCP的转发，而到了1.9.13时，UDP转发也支持了。 1.3 查看">
-<meta name="twitter:image" content="https://i.loli.net/2019/02/20/5c6cc58eca105.png">
+<meta name="twitter:title" content="物联网基础知识">
+<meta name="twitter:description" content="整体结构 物联网大体上有 3 个构成要素，如图 2.1 所示。一个是设备，另一个是网关，再来就是服务器。  图 2.1　物联网的整体结构 2.1.2　网关 如图 2.1 左下所示，物联网使用的设备中，有 3 台设备不能直接连接到互联网。网关就负责把这些设备转发到互联网。 网关指的是能连接多台设备，并具备直接连接到互联网的功能的机器和软件（图 2.2）。如今，市面上有很多种网关。在多数情况下，网关">
+<meta name="twitter:image" content="https://img.hacpai.com/bing/20180612.jpg?imageView2/1/w/960/h/520/interlace/1/q/100">
 
 
 
@@ -161,13 +182,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/22/通过nginx对tcp-udp进行负载均衡/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/22/物联网基础知识/">
 
 
 
 
 
-  <title>通过nginx对tcp/udp进行负载均衡 | 平凡之路</title>
+  <title>物联网基础知识 | 平凡之路</title>
   
 
 
@@ -358,7 +379,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/通过nginx对tcp-udp进行负载均衡/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/物联网基础知识/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Henry Yao">
@@ -375,7 +396,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">通过nginx对tcp/udp进行负载均衡</h1>
+          <h1 class="post-title" itemprop="name headline">物联网基础知识</h1>
         
 
         <div class="post-meta">
@@ -387,7 +408,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T10:54:50+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T11:01:32+08:00">
                 2019-02-22
               </time>
             
@@ -410,8 +431,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
+                  <a href="/categories/物联网/" itemprop="url" rel="index">
+                    <span itemprop="name">物联网</span>
                   </a>
                 </span>
 
@@ -427,7 +448,7 @@
 
           
           
-             <span id="/2019/02/22/通过nginx对tcp-udp进行负载均衡/" class="leancloud_visitors" data-flag-title="通过nginx对tcp/udp进行负载均衡">
+             <span id="/2019/02/22/物联网基础知识/" class="leancloud_visitors" data-flag-title="物联网基础知识">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -453,7 +474,7 @@
                   <span class="post-meta-item-text">字数</span>
                 
                 <span title="字数">
-                  1k
+                  6k
                 </span>
               
 
@@ -469,7 +490,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4min
+                  21min
                 </span>
               
             </div>
@@ -490,42 +511,153 @@
       
 
       
-        <h3 id="1-安装nginx"><a href="#1-安装nginx" class="headerlink" title="1. 安装nginx"></a>1. 安装nginx</h3><h4 id="1-1-通过yum安装"><a href="#1-1-通过yum安装" class="headerlink" title="1.1 通过yum安装"></a>1.1 通过yum安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@yaoxiang ~]# yum install nginx</span><br></pre></td></tr></table></figure>
-<h4 id="1-2-查看nginx的版本"><a href="#1-2-查看nginx的版本" class="headerlink" title="1.2 查看nginx的版本"></a>1.2 查看nginx的版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@yaoxiang ~]# nginx -v</span><br><span class="line">nginx version: nginx/1.12.2</span><br></pre></td></tr></table></figure>
-<p>nginx的版本必须高于1.9.0，因为从1.9开始nginx就支持对TCP的转发，而到了1.9.13时，UDP转发也支持了。</p>
-<h4 id="1-3-查看默认编译参数"><a href="#1-3-查看默认编译参数" class="headerlink" title="1.3 查看默认编译参数"></a>1.3 查看默认编译参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@yaoxiang ~]# nginx -V</span><br><span class="line">nginx version: nginx/1.12.2</span><br><span class="line">built by gcc 4.8.5 20150623 (Red Hat 4.8.5-16) (GCC) </span><br><span class="line">built with OpenSSL 1.0.2k-fips  26 Jan 2017</span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: --prefix=/usr/share/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib64/nginx/modules --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --http-client-body-temp-path=/var/lib/nginx/tmp/client_body --http-proxy-temp-path=/var/lib/nginx/tmp/proxy --http-fastcgi-temp-path=/var/lib/nginx/tmp/fastcgi --http-uwsgi-temp-path=/var/lib/nginx/tmp/uwsgi --http-scgi-temp-path=/var/lib/nginx/tmp/scgi --pid-path=/run/nginx.pid --lock-path=/run/lock/subsys/nginx --user=nginx --group=nginx --with-file-aio --with-ipv6 --with-http_auth_request_module --with-http_ssl_module --with-http_v2_module --with-http_realip_module --with-http_addition_module --with-http_xslt_module=dynamic --with-http_image_filter_module=dynamic --with-http_geoip_module=dynamic --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_slice_module --with-http_stub_status_module --with-http_perl_module=dynamic --with-mail=dynamic --with-mail_ssl_module --with-pcre --with-pcre-jit --with-stream=dynamic --with-stream_ssl_module --with-google_perftools_module --with-debug --with-cc-opt=&apos;-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -m64 -mtune=generic&apos; --with-ld-opt=&apos;-Wl,-z,relro -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E&apos;</span><br></pre></td></tr></table></figure>
-<p>nginx实现TCP/UDP的转发依靠的是<strong>Stream</strong>模块，查看默认编译参数中是含有<strong>–with-stream</strong>参数，可以看到上面的参数里含有<strong>–with-stream=dynamic</strong>,说明已动态加载Stream模块</p>
-<h3 id="2-修改nginx配置"><a href="#2-修改nginx配置" class="headerlink" title="2. 修改nginx配置"></a>2. 修改nginx配置</h3><h4 id="2-1-增加stream块"><a href="#2-1-增加stream块" class="headerlink" title="2.1 增加stream块"></a>2.1 增加stream块</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">[root@yaoxiang ~]# vim /etc/nginx/nginx.conf</span><br><span class="line">...</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line">stream &#123;</span><br><span class="line">#定义被代理的服务器组upstream 组名</span><br><span class="line">upstream dns &#123;</span><br><span class="line"> # zone   dns 64k;</span><br><span class="line">  server 172.27.9.204:4005;#代理的服务器地址</span><br><span class="line">  server 172.27.9.204:4006 weight=5;#weight 权重，默认都是1</span><br><span class="line">  server 172.27.9.204:4007 max_fails=3 fail_timeout=30s;#max_fails - NGINX将服务器标记为不可用的连续失败尝试次数。fail_timeout为NGINX认为服务器不可用的时间长度。</span><br><span class="line">  server 172.27.9.204:4008 backup;#backup 备用服务器，其他服务器不可用时，才会收到转发</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">  listen 4000 udp;#监听udp4000端口，如不加udp则默认监听tcp</span><br><span class="line"></span><br><span class="line">  proxy_responses 1;#1代表需要回应，并将回应转发；0代表不需要回应</span><br><span class="line"></span><br><span class="line">  proxy_timeout 20s;#回应超时时间，超时未回应暂停转发</span><br><span class="line"></span><br><span class="line">  proxy_pass dns;#代理服务器、服务器组</span><br><span class="line"></span><br><span class="line">  proxy_buffer_size 512k;#响应缓冲区大小，如果后端发送的响应头过大可以尝试增加此缓冲。</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">...&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-负载均衡策略"><a href="#2-2-负载均衡策略" class="headerlink" title="2.2 负载均衡策略"></a>2.2 负载均衡策略</h4><ul>
-<li><p>round-robin（轮询）——默认，Nginx使用轮询算法负载均衡通信。因为是默认方法，所以没有round-robin指令；只创建upstream配置块在顶级stream上下文并像之前步骤添加server指令。</p>
-</li>
-<li><p>last_conn（最少连接）——Nginx选择当前活跃连接数较少的服务器。</p>
-</li>
-<li><p>least_tome——Nginx选择最低平均延迟和最少活跃连接的服务器。最低活跃连接基于least_time指令的以下参数计算：</p>
-<ul>
-<li><p>connect——连接upstream服务器的时间</p>
-</li>
-<li><p>first_byte——接收第一个数据字节的时间</p>
-</li>
-<li><p>last_byte——从服务器接收完整响应的时间</p>
-</li>
-</ul>
-</li>
-<li><p>hash——Nginx基于用户定义键选择服务器，例如，源IP地址</p>
-</li>
-</ul>
-<p>#####例子：采用最少连接和hash负载均衡策略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">upstream dns &#123;</span><br><span class="line"> last_conn;#最少连接策略</span><br><span class="line"> server 172.27.9.204:4005;#代理的服务器地址</span><br><span class="line"> server 172.27.9.204:4006;</span><br><span class="line"> server 172.27.9.204:4007;</span><br><span class="line"> server 172.27.9.204:4008;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">upstream stream_backend &#123;</span><br><span class="line"></span><br><span class="line">    hash $remote_addr;</span><br><span class="line"></span><br><span class="line">    server backend1.example.com:12345;</span><br><span class="line"></span><br><span class="line">    server backend2.example.com:12345;</span><br><span class="line"></span><br><span class="line">    server backend3.example.com:12346;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-启动nginx"><a href="#3-启动nginx" class="headerlink" title="3.启动nginx"></a>3.启动nginx</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@yaoxiang nginx]# sudo nginx</span><br><span class="line">nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)</span><br></pre></td></tr></table></figure>
-<p>出现以上提示说明端口被占用，修改nginx.conf里http模块中的端口号</p>
-<h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h3><h4 id="4-1-向nginx主机发送报文"><a href="#4-1-向nginx主机发送报文" class="headerlink" title="4.1 向nginx主机发送报文"></a>4.1 向nginx主机发送报文</h4><p><img src="https://i.loli.net/2019/02/20/5c6cc58eca105.png" alt="5c6cc58eca105"></p>
-<h4 id="4-2-可以看到代理服务器组主机的不同端口都接收到了"><a href="#4-2-可以看到代理服务器组主机的不同端口都接收到了" class="headerlink" title="4.2 可以看到代理服务器组主机的不同端口都接收到了"></a>4.2 可以看到代理服务器组主机的不同端口都接收到了</h4><p><strong>4006端口</strong></p>
-<p><img src="https://i.loli.net/2019/02/20/5c6cc5f85088e.png" alt="*5c6cc5f85088e*"></p>
-<p><strong>4005端口</strong></p>
-<p><img src="https://i.loli.net/2019/02/20/5c6cc63f11161.png" alt="5c6cc63f11161"></p>
-<h4 id="4-3-接收端代理服务器向nginx主机回复消息"><a href="#4-3-接收端代理服务器向nginx主机回复消息" class="headerlink" title="4.3 接收端代理服务器向nginx主机回复消息"></a>4.3 接收端代理服务器向nginx主机回复消息</h4><p><img src="https://i.loli.net/2019/02/20/5c6cc6d772438.png" alt="5c6cc6d772438"></p>
-<h4 id="4-4-可以看到发送端收到了回复"><a href="#4-4-可以看到发送端收到了回复" class="headerlink" title="4.4 可以看到发送端收到了回复"></a>4.4 可以看到发送端收到了回复</h4><p><img src="https://i.loli.net/2019/02/20/5c6cc7812a6dc.png" alt="5c6cc7812a6dc"></p>
+        <p><img src="https://img.hacpai.com/bing/20180612.jpg?imageView2/1/w/960/h/520/interlace/1/q/100" alt=""></p>
+<p>整体结构</p>
+<p>物联网大体上有 3 个构成要素，如图 2.1 所示。一个是设备，另一个是网关，再来就是服务器。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.001.png" alt=""></p>
+<p>图 2.1　物联网的整体结构</p>
+<p>2.1.2　网关</p>
+<p>如图 2.1 左下所示，物联网使用的设备中，有 3 台设备不能直接连接到互联网。网关就负责把这些设备转发到互联网。</p>
+<p>网关指的是能连接多台设备，并具备直接连接到互联网的功能的机器和软件（图 2.2）。如今，市面上有很多种网关。在多数情况下，网关凭借 Linux 操作系统来运行。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.002.png" alt=""></p>
+<p>图 2.2　选择网关的标准</p>
+<p>选择网关时有几项重要的标准，我们来一起看一下。</p>
+<p>◉ 接口</p>
+<p>第一重要的是用于连接网关和设备的接口。网关的接口决定了能连接的设备，因此重点在于选择一个适配设备的接口。</p>
+<p>有线连接方式包括串行通信和 USB 连接。串行通信中经常用的是一种叫作 D-SUB 9 针（pin）的连接器，而 USB 连接中用到的 USB 连接器则种类繁多。</p>
+<p>无线连接中用的接口是蓝牙和 Wi-Fi（IEEE 802.11）。此外，还有采用 920 MHz 频段的 Zigbee 标准，以及各制造商们的专属协议。第 3 章会详细讲解这些规格各自的特征，重点在于根据设备对应的标准来选择接口。</p>
+<p>◉ 网络接口</p>
+<p>我们用以太网或是 Wi-Fi、3G/LTE 来连接外部网络。网络接口会影响到网关的设置场所。以太网采用有线连接，通信环境稳定。然而正因为采用的是有线连接，所以必须把 LAN 电缆布线到网关的设置场所。因此，在设置场所方面就会在某种程度上受到限制。</p>
+<p>对 3G/LTE 连接而言，设置场所就比较自由了，但通信的质量会受信号强弱影响，所以通信不如有线连接稳定。因此，有时很难在信号不良的大楼和工厂等封闭环境中设置。不过，3G/LTE 连接有个好处，即只使用网关就能完成和外部的通信，因此操作起来很简单。此外，想使用 3G/LTE 时，需要和电信运营商签订协议并获取 SIM 卡，这点就跟使用手机一样。</p>
+<p>网关的作用</p>
+<p>就如我们前面说的那样，网关是一台用于把不能直接连接到互联网的设备转发连接到互联网的设备。再往细了说，网关是由 3 种功能构成的（图 2.4）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.004.png" alt=""></p>
+<p>图 2.4　网关的功能</p>
+<p>2.1.3　服务器的结构</p>
+<p>在功能方面，物联网服务大体上可分为 3 个部分，本书分别称它们为前端部分、处理部分，以及数据库部分（图 2.3）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.003.png" alt=""></p>
+<p>图 2.3　物联网服务的 3 个功能</p>
+<p>首先，前端部分包括数据接收服务器和数据发送服务器。数据接收服务器接收设备和网关发来的数据，转交给后续的处理部分。数据发送服务器则刚好相反，它负责把从处理服务器接收到的内容发送给设备。</p>
+<p>通常情况下，Web 服务的前端部分只接受 HTTP 协议。而物联网服务的前端部分则需要根据连接设备的不同来匹配 HTTP 以外的协议。使用者需要考虑到协议的实时性和通信的轻量化，以及能否以服务器为起点发送数据。我们会在 2.2 节重新讲解这些协议。</p>
+<p>处理部分负责处理从前端部分接收到的数据。这里的“处理”指的是分解数据、存储数据、分析数据、生成发给设备的通知内容，等等。数据处理包括批处理和流处理等，批处理即把数据存入数据库之后一并进行处理，而流处理是逐次处理从前端部分收到的数据。使用者需要根据处理内容和数据特性来灵活使用这些“处理”。</p>
+<p>最后是数据库。这里的数据库不只会用到关系数据库，还会用到 NoSQL 数据库。当然，使用者需要根据想存储的数据和想使用的方法来选择数据库。</p>
+<p>2.3.1　HTTP 协议</p>
+<p>HTTP 协议提供的是最大众化且最简易的方法。使用一般的 Web 框架就可以制作数据接收服务器。设备用 HTTP 的 GET 方法和 POST 方法访问服务器，把数据存入请求参数和 BODY 并发送（图 2.6）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.006.png" alt=""></p>
+<p>图 2.6　通过 HTTP 协议发送和接收数据</p>
+<p>HTTP 协议是 Web 的标准协议，这一点自不用说。因此 HTTP 协议和 Web 的兼容性非常强。此外，因为 HTTP 协议有非常多的技术诀窍，所以我们必须在制作实际系统时审视服务器的结构，应用程序的架构以及安全性等。关于这点，有很多事例值得参考。另外，HTTP 协议还准备了 OSS 的框架，方便人们使用。</p>
+<p>2.3.3　WebSocket</p>
+<p>WebSocket 是一种通信协议，用于在互联网上实现套接字通信。它实现了 Web 浏览器和 Web 服务器间的数据双向连续传输。</p>
+<p>就 HTTP 协议而言，每次发送数据都必须生成发送数据用的通信路径及连接。此外，一般情况下，客户端没有发出申请就不能进行通信。</p>
+<p>相对而言，WebSocket 就不同了。只要一开始根据客户端发出的连接申请确立了连接，就能持续用同一个连接传输数据。另外，只要确立了连接，就算客户端没有发出申请，服务器也能给客户端发送数据（图 2.7）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.007.png" alt=""></p>
+<p>图 2.7　通过 WebSocket 协议传输数据</p>
+<p>这样一来，在发送语音数据等连续的数据，以及发生与服务器的相互交换时，就能使用 WebSocket 了。WebSocket 自身只提供服务器与客户端的数据交换，因此需要使用者另外决定在应用层上使用的协议。</p>
+<p>2.3.4　MQTT</p>
+<p>MQTT（MQ Telemetry Transport，消息队列遥测传输）是近年来出现的一种新型协议，物联网领域会将其作为标准协议。MQTT 原本是 IBM 公司开发的协议，现在则开源了，被人们不断开发着。</p>
+<p>MQTT 是一种能实现一对多通信（人们称之为发布或订阅型）的协议。它由 3 种功能构成，分别是中介（broker）、发布者（publisher）和订阅者（subscriber）（图 2.8）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.008.png" alt=""></p>
+<p>图 2.8　通过 MQTT 传输消息</p>
+<p>◉ QoS</p>
+<p>QoS 是 Quality of Service（服务质量）的简称。这个词在网络领域表示的是通信线路的品质保证。MQTT 里存在 3 个等级的 QoS。“发布者和中介之间”以及“中介和订阅者之间”都分别定义了不同的 QoS 等级，以异步的方式运行。此外，当“中介与订阅者之间”指定的 QoS 小于“发布者和中介之间”交换的 QoS 时，“中介与订阅者之间”的 QoS 会被降级到指定的 QoS。QoS 0 指的是最多发送一次消息（at most once）（图 2.11），发送要遵循 TCP/IP 通信的“尽力服务”。消息分两种情况，即到达了一次中介处，或没有到达中介处。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.011.png" alt=""></p>
+<p>图 2.11　QoS 0（最多只能发送一次）</p>
+<p>接下来的 QoS 1 是至少发送一次消息（at least once）（图 2.12）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.012.png" alt=""></p>
+<p>图 2.12　QoS 1（至少发送一次消息）</p>
+<p>中介一接收到消息就会向发布者发送一个叫作“PUBACK 消息”的响应，除此之外还会根据订阅者指定的 QoS 发送消息。当发生故障，或经过一定时间后仍没能确认 PUBACK 消息时，发布者会重新发送消息。如果中介接收了发布者发来的消息却没有返回 PUBACK，那么中介会重复收到消息。</p>
+<p>最后是 QoS 2，它指的是准确发送一次消息（exactly once）。把它跟 QoS 1 合在一起使用，就能避免接收到重复的消息（图 2.13）。用 QoS 2 发送的消息里面含有消息 ID。中介收到消息后会将消息保存，然后给发布者发送 PUBREC 消息。发布者再给中介发送 PUBREL 消息，然后中介会给发布者发送 PUBCOMP 消息。接下来中介才会依据订阅者指定的 QoS，向订阅者传递接收到的消息。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.013.png" alt=""></p>
+<p>图 2.13　QoS 2（只发送一次消息）</p>
+<p>此外，就 QoS 2 而言，有时使用的中介会影响消息的传递时间。</p>
+<p>人们通常使用的是 QoS 0，只有要确保信息发送成功时才使用 QoS 1 和 QoS 2，这样一来可以减少网络的负担。后文将会讲到 Clean session，其中 QoS 的设定也是非常重要的。</p>
+<p>◉ Retain</p>
+<p>订阅者只能接收在订阅之后发布的消息，但如果发布者事先发布了带有 Retain 标志的消息，那么订阅者就能在订阅后马上收到消息。</p>
+<p>当发布者发布了带有 Retain 标志的消息时，中介会把消息传递给订阅了主题的订阅者，同时保存带有 Retain 标志的最新的消息。此时，若别的订阅者订阅了主题，就能马上收到带有 Retain 标志的新消息（图 2.14）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.014.png" alt=""></p>
+<p>图 2.14　Retain</p>
+<p>◉ Will</p>
+<p>Will 有“遗言”的意思。由于中介的 I/O 错误或网络故障等情况，发布者可能会突然从中介断开，Will 就是专门针对于这种情况的一个机构，它用于定义中介向订阅者发送的消息（图 2.15）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.015.png" alt=""></p>
+<p>图 2.15　Will</p>
+<p>发布者在连接中介时会用到 CONNECT（连接）消息，连接时对其指定 Will 标志、要发送的消息以及 QoS。这样一来，如果连接意外断开，Will 消息就会被传递给订阅者。另外，还有一个标志叫作 Will Retain。通过指定这个标志，就能跟前面说的 Retain 达到同样的效果，即在中介处保存消息。</p>
+<p>当发布者使用 DISCONNECT（断开连接）消息明确表明连接已断开时，Will 消息就不会被发送给订阅者。</p>
+<p>◉ Clean session</p>
+<p>Clean session 用于指定中介是否保留了订阅者的已订阅状态。用 CONNECT 消息连接时，订阅者把 Clean session 标志设定为 0 或 1。0 是保留 session，1 是不保留 session。</p>
+<p>若指定 Clean session 为 0 且中介已经连接上了订阅者，则中介需要在订阅者断开连接后保留订阅的消息。另外，如果订阅者的连接已经断开，且发布者已经发布了 QoS 1、QoS 2 的消息给已订阅的主题时，中介则会把消息保存，等订阅者再次连接时发送给订阅者（图 2.16）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.016.png" alt=""></p>
+<p>图 2.16　Clean session</p>
+<p>若指定 Clean session 为 1 并连接，中介就会废弃以往保留的客户端信息，将其当成一次“干净”的连接来看待。此外，订阅者断开连接时，中介也会废弃所有的信息。</p>
+<p>我们可以用表 2.1 所示的几种产品来实现 MQTT。是否支持前文介绍的功能则取决于中介的种类。</p>
+<p>表 2.1　MQTT 的实现<br><img src="http://47.101.195.32/upload/7a8b3ba9119d40d28927b2ea13742611_image.png" alt="imagepng"></p>
+<p>除此之外，一个叫作 Paho 的库还公开了发布者和订阅者等客户端功能。不仅 Java、JavaScript、Python 配备了 Paho，连 C 语言和 C++ 都配备了 Paho。因此，我们能够将其与设备结合起来并加以使用。</p>
+<p>数据格式</p>
+<p>前面我们围绕用于接收数据的通信过程，即协议进行了讲解。事实上，数据就是通过协议来进行交换的。当然，就如我们前文所说，这条规则在物联网的世界里也是不变的。数据要经过协议进行交换，而数据的格式也很重要。通过 Web 协议来使用的数据格式中，具有代表性的包括 XML 和 JSON（图 2.17）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.017.png" alt=""></p>
+<p>数据处理</p>
+<p>很显然，处理服务器就是处理接收到的数据的地方。“处理”是一个抽象的词语，例如保存数据，以及转换数据以使其看上去更易懂，还有从多台传感器的数据中发现新的数据，这些都是处理。使用者的目的不同，处理服务器的内容也各异。不过说到数据的处理方法，它可以归纳成以下 4 种：数据分析、数据加工、数据保存以及向设备发出指令（图 2.20）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.020.png" alt=""></p>
+<p>图 2.20　数据的处理</p>
+<p>关于数据的分析和加工，有两种典型的处理方式，分别叫作“批处理”和“流处理”。首先就来说说这个“批处理”和“流处理”。</p>
+<p>批处理</p>
+<p>◉ Apache Hadoop</p>
+<p>Apache Hadoop 是一个对大规模数据进行分布式处理的开源框架。Hadoop 有一种叫作 MapReduce 的机制，用来高效处理数据。MapReduce 是一种专门用于在分布式环境下高效处理数据的机制，它基本由 Map、Shuffle、Reduce 这 3 种处理构成（图 2.21）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.021.png" alt=""></p>
+<p>图 2.21　通过 Hadoop MapReduce 执行批处理</p>
+<p>◉ Apache Spark</p>
+<p>Apache Spark 也和 Hadoop 一样，是一个分布式处理大规模数据的开源框架。Spark 用一种叫作 RDD（Resilient Distributed Dataset，弹性分布数据集）的数据结构来处理数据（图 2.22）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.022.png" alt=""></p>
+<p>图 2.22　通过 Spark 执行批处理</p>
+<p>　流处理</p>
+<p>批处理是把数据攒起来，一次性进行处理的方法。相对而言，流处理是不保存数据，按照到达处理服务器的顺序对数据依次进行处理。</p>
+<p>想实时对数据做出反应时，流处理是一个很有效的处理方法。因为批处理是把数据积攒之后隔一段时间进行处理，所以从数据到达之后到处理完毕为止，会出现时间延迟。因此，流处理这种把到达的数据逐次进行处理的思路就变得很重要了。此外，流处理基本上是不会保存数据的。只要是被使用过的数据，如果没必要保存，就会直接丢弃。</p>
+<p>◉ Spark Streaming</p>
+<p>Spark Streaming 是作为 Apache Spark（在“批处理”部分介绍过）的库被公开的。通过 Spark Streaming，就能够把 Apache Spark 拿到流处理中来使用（图 2.23）。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.023.png" alt=""></p>
+<p>图 2.23　通过 Spark Streaming 执行流处理</p>
+<p>◉ Apache Storm</p>
+<p>Apache Storm 是用于实现流处理的框架，结构如图 2.24 所示。</p>
+<p><img src="http://www1.ituring.com.cn/figures/2017/IOT/04.d02z.024.png" alt=""></p>
+<p><img src="http://www.elecfans.com/uploads/allimg/180416/0Q2024094_0.png" alt=""></p>
+<p>本文思维导图概览</p>
+<p>物联网的基本架构包括三个层面：感知层、网络层和应用层。</p>
+<p><img src="http://www.elecfans.com/uploads/allimg/180416/0Q30115D_0.png" alt=""></p>
+<p>物联网架构图</p>
+<p>物联网架构图</p>
+<p>感知层通过传感器采集某些数据(声、光、电等)，基于网络层的终端模组，对接到网络层的基站，实现数据采集后的传输。</p>
+<p>网络层负责将感知层采集的数据进行回传，基于不同特点采用不同的通信协议技术进行回传至关重要，这也是本文重点所讨论的内容。</p>
+<p>应用层可以理解为物联网的数据平台和业务平台。数据平台作为所有物联网终端数据的集合点，负责数据的统一存储、分析等，北向通过标准的API接口提供给业务平台做数据调用;业务平台基于数据平台的原始数据实现各种业务逻辑，对外呈现的是服务。</p>
+<p>其中，聚焦于网络层的通信协议，则是群雄逐鹿，百家争鸣。</p>
+<p>当下最流行的Wi-Fi技术数据传输速度飞快，尤其802.11ax技术即将诞生，理论上8条流不是梦。然而伴随速度的提升，耗电量急剧增大，且传输距离也成为难题，长距离传输需要每隔一定距离放一个AP进行桥接，这必将大幅提升成本。因此，Wi-Fi技术更适合供PC及PDA等终端应用的室内无线上网场景。</p>
+<p>蓝牙技术与Wi-Fi在2.4G频段上有交接，所以同频段会有一些干扰问题的产生。蓝牙的耗电情况比Wi-Fi稍微低一些， 而传输速度远不及Wi-Fi。在资产追踪、定位标签以及医疗传感器等场景下应用较多，如智能手表，蓝牙定位等。</p>
+<p>Zigbee技术的功耗比较小，通信距离也比较短，是一种短距离低功耗的技术，主要应用于无线传感器及医疗场景等。</p>
+<p>UWB超宽带技术频段较为干净，没有其他频段的干扰，在高精度定位的场景下应用更多。</p>
+<p><img src="http://www.elecfans.com/uploads/allimg/180416/0Q401C19_0.png" alt=""></p>
+<p>通信协议对比</p>
+<p>以上技术更适合近距离场景的数据传输，那么在远距离场景下又有哪些技术呢?</p>
+<p>运营商提供的4G网络，是人们生活中应用最多的，甚至超过Wi-Fi。它可以做到长距离传输，无论在室内还是室外，速度都很可观。这种技术看起来很优越，但其功耗较大，只能应用于终端可自取电的物联网场景，如某公司的共享单车，利用太阳能电池板进行取电。</p>
+<p>在远距离场景下，如果终端不能解决供电问题，那么需要一种具有更低功耗，覆盖范围更大的技术来满足这个场景下的物联网通信需求。于是在业务和技术的驱动下，一些专家和企业为了解决这个问题，研究出一种新型的通信技术——LPWAN，即低功耗广域网技术。</p>
+<p>LPWAN的目标是为物联网应用中的M2M(设备到设备)通信场景而优化的远距离无线网络通讯技术。LPWAN技术的优势主要体现在：低速率、超低功耗、长距离、低吞吐、强覆盖。这些特点恰好说明，此项技术正是针对物联网在长距离传输的场景下开发的。具体应用如：城区覆盖、远程抄表、井盖检测以及近海渔船检测等。</p>
+<p><img src="http://www.elecfans.com/uploads/allimg/180416/0Q501W37_0.png" alt=""></p>
+<p>LPWAN技术特点</p>
+<p>LPWAN作为一个新的技术阵营，其内部分为两大派系：授权频段和非授权频段。授权频段又分为EC-GSM、eMTC以及NB-IoT;而非授权频段的“头牌”则是LoRa。</p>
+<p>　EC-GSM</p>
+<p>随着LPWAN的兴起，传统的GRPS应用于物联网的劣势愈发明显。2014年，3GPP研究项目提出，将窄带(200kHz)物联网技术迁移到GSM上，寻求比传统GPRS高20dB的更广的覆盖范围，并提出五大目标：提升室内覆盖性能、支持大规模设备连接、减小设备复杂性、减小功耗和时延。到了2015年，TSG GERAN #67会议报告表示，EC-GSM已满足5大目标。但随着R13 NB-IoT标准冻结之后，人们将更多精力投入到了重新定义的标准当中。</p>
+<p>eMTC</p>
+<p>eMTC的概念在R13中被正式命名，以前的R12被称为Low-Cost MTC，它是基于LTE演进的物联网技术。eMTC基于蜂窝网进行部署，用户设备通过支持1.4MHz的射频和基带带宽，可直接接入现有的LTE网络。eMTC的关键能力在于速率高(相较于GPRS、zigbee等)、可移动、可定位以及支持语音。。</p>
+<p>　NB-IoT</p>
+<p>最近特别火热的NB-IoT其实是NB-CIoT和NB-LTE两者的融合。NB-CIoT提出了全新的空口技术，较传统LTE网络改动较大，他满足于TSG GERAN#67会议上提出的五大目标，其亮点在于通信模块成本低于GSM及NB-LTE的模块。而NB-LTE则与现有的LTE兼容，特点是利于部署。在激烈的争论后，终于对两者加以融合，形成了NB-IoT的技术标准。</p>
+<p>NB-IoT全称为窄带物联网，可以直接部署于LTE网络，良好的兼容性降低了部署的成本。其本身具有更低的功耗，理论上估算，承载NB-IoT的终端模组基于电池的待机时间可达10年之久。模块成本的降低，也让市场更多的公司开始应用这项技术，风靡全国的共享单车就是其一。某公司第三代的智能锁就采用了NB-IoT的模组，一方面是运营商的大力推广，另一方面也确实带来了价值。</p>
+<p>LoRa</p>
+<p>与NB-IoT齐头并进发展的就是LoRa，与之不同的是LoRa技术使用非授权频段。它是由Semtech公司采用和推广的一种基于扩频技术的超远距离无线传输技术。LoRa全称是Long Range，顾名思义，LoRa可以支持长距离传输。在中国，LoRa可以使用的频段有两个：CN779-787以及CN470-CN510。由于CN779-787最大发射功率只有10dBm(10mW)，并没有“实用”的价值。所以人们更青睐于CN470-CN510这个频段，它的最大发射功率可以达到17dBm(50mW)。</p>
+<p>类比于Wi-Fi联盟，LoRa也有对应的LoRa联盟，旨为共同建立标准和规范，LoRaWAN就是这样的产物。</p>
+<p><img src="http://www.elecfans.com/uploads/allimg/180416/0Q6021318_0.png" alt=""></p>
+<p>LoRa与NB-IoT对比</p>
+<p>基于成本的考虑，LoRa的模组单价在8-10美元左右，而且非授权频段也不需要支付额外的频谱成本，相比于NB-IoT而言，成本方面具有较大优势。在电池性能方面，由于NB-IoT在蜂窝授权频谱上工作，所以需要定时进行网络同步，会消耗相应的电量，而LoRa则无此担忧，但NB-IoT的这个特性也受到共享单车的热烈欢迎，可以基于此来做车辆的实时定位工作。另外，从商业模式上来看，NB-IoT属于运营商建网，业务方不需要自己来考虑基站的部署，比较省心;但与此同时，网络的质量、安全都是不可控的风险，且企业自身的增值也会受到一定阻碍。反观LoRa，属于企业自建网络，基站需自己部署，后续需自己运维、优化等，覆盖的点位、网络质量及安全等维度都要自己负责。</p>
+<p>截止目前，没有哪个物联网技术能够成为真正的主流，对技术本身而言，没有绝对的完美;从业务出发，更是需要结合业务特点、商业模式去选择更适合的物联网技术。</p>
+<p>物联网技术的发展伴随各方“豪杰”群雄逐鹿，未来会不会三足鼎立或由新的势力一统天下，让我们拭目以待。</p>
+<p>以上是关于物联网中-物联网通信协议纷争：群雄逐鹿 百家争鸣的相关介绍，如果想要了解更多相关信息，请多多关注eeworld，eeworld电子工程将给大家提供更全、更详细、更新的资讯信息。</p>
+<p>Stay hungry，Stay foolish！</p>
 
       
     </div>
@@ -580,7 +712,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nginx/" rel="tag"><i class="fa fa-tag"></i> nginx</a>
+            <a href="/tags/物联网/" rel="tag"><i class="fa fa-tag"></i> 物联网</a>
           
         </div>
       
@@ -593,8 +725,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/12/tomcat项目去除工程名访问/" rel="next" title="tomcat项目去除工程名访问">
-                <i class="fa fa-chevron-left"></i> tomcat项目去除工程名访问
+              <a href="/2019/02/22/常见数据结构/" rel="next" title="常见数据结构">
+                <i class="fa fa-chevron-left"></i> 常见数据结构
               </a>
             
           </div>
@@ -602,10 +734,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/22/常见数据结构/" rel="prev" title="常见数据结构">
-                常见数据结构 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -682,17 +810,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Henry Yao">
           <p class="site-author-name" itemprop="name">Henry Yao</p>
@@ -823,22 +942,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装nginx"><span class="nav-number">1.</span> <span class="nav-text">1. 安装nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-通过yum安装"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 通过yum安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-查看nginx的版本"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 查看nginx的版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-查看默认编译参数"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 查看默认编译参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改nginx配置"><span class="nav-number">2.</span> <span class="nav-text">2. 修改nginx配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-增加stream块"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 增加stream块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-负载均衡策略"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 负载均衡策略</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-启动nginx"><span class="nav-number">3.</span> <span class="nav-text">3.启动nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-测试"><span class="nav-number">4.</span> <span class="nav-text">4. 测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-向nginx主机发送报文"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 向nginx主机发送报文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-可以看到代理服务器组主机的不同端口都接收到了"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 可以看到代理服务器组主机的不同端口都接收到了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-接收端代理服务器向nginx主机回复消息"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 接收端代理服务器向nginx主机回复消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-可以看到发送端收到了回复"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 可以看到发送端收到了回复</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
